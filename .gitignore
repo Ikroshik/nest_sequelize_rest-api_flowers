@@ -1,15 +1,22 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> be094ed9b02522a0ce7a16553e0ded9d4b367dd5
 # compiled output
 /dist
 /node_modules
 /build
 
+<<<<<<< HEAD
 >>>>>>> be094ed (first commit)
+=======
+>>>>>>> be094ed9b02522a0ce7a16553e0ded9d4b367dd5
 # Logs
 logs
 *.log
 npm-debug.log*
+<<<<<<< HEAD
 <<<<<<< HEAD
 yarn-debug.log*
 yarn-error.log*
@@ -81,6 +88,8 @@ web_modules/
 # Yarn Integrity file
 .yarn-integrity
 =======
+=======
+>>>>>>> be094ed9b02522a0ce7a16553e0ded9d4b367dd5
 pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -108,7 +117,10 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+<<<<<<< HEAD
 >>>>>>> be094ed (first commit)
+=======
+>>>>>>> be094ed9b02522a0ce7a16553e0ded9d4b367dd5
 
 # dotenv environment variable files
 .env
@@ -117,6 +129,7 @@ lerna-debug.log*
 .env.production.local
 .env.local
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -168,6 +181,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 =======
+=======
+>>>>>>> be094ed9b02522a0ce7a16553e0ded9d4b367dd5
 # temp directory
 .temp
 .tmp
@@ -180,4 +195,7 @@ pids
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+<<<<<<< HEAD
 >>>>>>> be094ed (first commit)
+=======
+>>>>>>> be094ed9b02522a0ce7a16553e0ded9d4b367dd5

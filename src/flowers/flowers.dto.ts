@@ -1,4 +1,4 @@
-import { IsString, IsNumber } from 'class-validator'
+import { IsString, IsNumber, IsNotEmpty } from 'class-validator'
 
 export class CreateFlowersDto {
     @IsString()

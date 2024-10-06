@@ -20,7 +20,7 @@ export class FlowersService {
         return this.flowerModel.findAll();
       }
 
-      
+
     //   Данные для вставки в БД
     //   async createMany() {
     //     try {
@@ -61,12 +61,13 @@ export class FlowersService {
         // ]
     // }
 
-    // dto - data transder object, с помощью него мы проверяем полученные извне данные, и в самом dto находится валидация
+    // dto - data transder object, с помощью него мы проверяем полученные извне данные, и в самом dto находится валидация 
+    // ОНО НЕ РАБОТАЛО ИЗ-ЗА ТОГО, ЧТО В КОНТРОЛЛЕРЕ Я ЗАКОМЕНТИЛ ВАЛИДЕЙШН ПАЙП + в модели flowers добавил для Model <InferAttributes>
     // не работает, потому что не нравится тип в createFlowersDto в .create, я не знаю почему, поэтому поставил any
     // async create(createFlowersDto: createFlowersDto) {
     //     return await this.flowerModel.create(createFlowersDto)
     // }
-    async create(createFlowersDto: any) {
-        return await this.flowerModel.create(createFlowersDto)
+    async create(createFlowersDto: CreateFlowersDto) {
+      return await this.flowerModel.create(createFlowersDto)
     }
 }

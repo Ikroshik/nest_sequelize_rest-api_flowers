@@ -30,9 +30,10 @@ export class FlowersController {
   //   return this.flowersService.createMany();
   // }
   @Post()
-  // @UsePipes(new ValidationPipe())
+  @UsePipes(new ValidationPipe())
   @UseGuards(AuthGuard)
   create(@Body() createFlowersDto: CreateFlowersDto) {
+    console.log(CreateFlowersDto)
     return this.flowersService.create(createFlowersDto)
   }
   

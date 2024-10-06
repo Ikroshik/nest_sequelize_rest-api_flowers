@@ -15,9 +15,12 @@ export class FlowersService {
         private readonly configService: ConfigService
       ) {}
       async findAll(): Promise<flowers[]> {  
+        // Использование config-service в nest
         console.log(this.configService.get<EnumAppMode>('MODE'))  
         return this.flowerModel.findAll();
       }
+
+      
     //   Данные для вставки в БД
     //   async createMany() {
     //     try {

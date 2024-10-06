@@ -6,13 +6,33 @@ describe('FlowersService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [FlowersService],
+      providers: [{
+        provide: 'flowers',
+        useValue: {
+          findAll: jest.fn().mockResolvedValue([
+            {
+              id: 1,
+              name: 'Роза',
+              color: 'Белая',
+              price: 12
+            }
+          ]),
+          create: jest.fn().mockResolvedValue({
+            id: 2,
+            name: 'Мак',
+            color: 'Красный',
+            price: 11
+          })
+        }
+      }],
     }).compile();
 
     service = module.get<FlowersService>(FlowersService);
   });
 
-  it('should be defined', () => {
+
+
+  it('should return an array of flowers', () => {
     expect(service).toBeDefined();
   });
 });

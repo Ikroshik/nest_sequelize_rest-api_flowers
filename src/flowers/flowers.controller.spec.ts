@@ -8,13 +8,54 @@ describe('FlowersController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [FlowersController],
-      providers: [FlowersService],
+      providers: [{
+        provide: 'FlowersService',
+        useValue: {
+          findAll: jest.fn().mockResolvedValue([
+            {
+              id: 1,
+              name: 'Роза',
+              color: 'Белая',
+              price: 12
+            }
+          ]),
+          create: jest.fn().mockResolvedValue({
+            id: 2,
+            name: 'Мак',
+            color: 'Красный',
+            price: 11
+          })
+        }
+      }],
     }).compile();
 
     controller = module.get<FlowersController>(FlowersController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
+  it('should return an array of flowers', async () => {
+    expect(await controller.findAll()).toEqual([
+      {
+        id: 1,
+        name: 'Роза',
+        color: 'Белая',
+        price: 12
+      }
+    ])
   });
+
+  it('should return a new flower', async () => {
+    expect(await controller.create({
+      name: 'Роза',
+      color: 'Белая',
+      price: 12
+    })).toEqual([
+      {
+        id: 1,
+        name: 'Роза',
+        color: 'Белая',
+        price: 12
+      }
+    ])
+  });
+
 });

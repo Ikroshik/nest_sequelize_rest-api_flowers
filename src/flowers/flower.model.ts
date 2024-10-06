@@ -11,4 +11,5 @@ export class flowers extends Model<InferAttributes<flowers>> {
 
   @Column
   price: number;
+
 }

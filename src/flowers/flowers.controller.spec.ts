@@ -9,21 +9,31 @@ describe('FlowersController', () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [FlowersController],
       providers: [{
-        provide: 'FlowersService',
+        provide: FlowersService,
         useValue: {
           findAll: jest.fn().mockResolvedValue([
             {
-              id: 1,
-              name: 'Роза',
-              color: 'Белая',
-              price: 12
+                id: 1,
+                name: "Роза",
+                color: "Белая",
+                price: 12,
+                createdAt: "2024-10-04T13:12:28.195Z",
+                updatedAt: "2024-10-04T13:12:28.195Z"
+            },
+            {
+                id: 2,
+                name: "Мак",
+                color: "Красный",
+                price: 11,
+                createdAt: "2024-10-04T13:13:28.899Z",
+                updatedAt: "2024-10-04T13:13:28.899Z"
             }
-          ]),
+        ]),
           create: jest.fn().mockResolvedValue({
-            id: 2,
-            name: 'Мак',
-            color: 'Красный',
-            price: 11
+            id: 1,
+            name: 'Роза',
+            color: 'Белая',
+            price: 12
           })
         }
       }],
@@ -35,12 +45,22 @@ describe('FlowersController', () => {
   it('should return an array of flowers', async () => {
     expect(await controller.findAll()).toEqual([
       {
-        id: 1,
-        name: 'Роза',
-        color: 'Белая',
-        price: 12
+          "id": 1,
+          "name": "Роза",
+          "color": "Белая",
+          "price": 12,
+          "createdAt": "2024-10-04T13:12:28.195Z",
+          "updatedAt": "2024-10-04T13:12:28.195Z"
+      },
+      {
+          "id": 2,
+          "name": "Мак",
+          "color": "Красный",
+          "price": 11,
+          "createdAt": "2024-10-04T13:13:28.899Z",
+          "updatedAt": "2024-10-04T13:13:28.899Z"
       }
-    ])
+  ])
   });
 
   it('should return a new flower', async () => {
@@ -48,14 +68,14 @@ describe('FlowersController', () => {
       name: 'Роза',
       color: 'Белая',
       price: 12
-    })).toEqual([
+    })).toEqual(
       {
         id: 1,
         name: 'Роза',
         color: 'Белая',
         price: 12
       }
-    ])
+    )
   });
 
 });

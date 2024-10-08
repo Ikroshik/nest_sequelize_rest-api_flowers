@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { FlowersService } from './flowers.service';
+import { flowers } from './flower.model';
 
 describe('FlowersService', () => {
   let service: FlowersService;
@@ -7,7 +8,7 @@ describe('FlowersService', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [{
-        provide: 'flowers',
+        provide: FlowersService,
         useValue: {
           findAll: jest.fn().mockResolvedValue([
             {
